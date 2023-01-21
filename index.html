@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Agrega libreria Sweet alerts -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!--Agrega estilo -->
+  <link rel="stylesheet" href="estilo.css">
+    <title>Calculadora de cuotas sin interés</title>
+</head>
+
+<!-- Comienza el header -->
+<header>        
+  <h1>Calculadora de creditos en cuotas sin interés</h1>
+  <!-- Navbar en bootstrap -->
+  <nav class="navbar">
+    <a href="./index.html">Home</a>
+    <a href="./clientes.html" target="_blank">Clientes</a>
+  </nav>
+  <br>
+</header>
+
+<!-- body contiene la aplicacion app.js -->
+<body>
+  <div id="container">
+  <div id="calculadora">
+<!-- Formulario que ingresa los datos en app.js-->
+    <form id="Formulario">
+    <div>
+      <p>Datos del cliente</p>
+        <label for="Nombre">Nombre del cliente</label> <br>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre">
+      <br>
+        <label for="edad">Edad del cliente</label> <br>
+        <input type="text" id="edad" name="edad" placeholder="Ingrese edad">
+      <br>
+        <label for="Domiclio">Domicilio del cliente</label><br>
+        <input type="text" id="domicilio" name="domicilio" placeholder="Ingrese domicilio">
+      
+        <!-- Monto del credito en cuotas -->
+          <br>
+          <label for="Monto">Monto del credito</label><br>
+          <input type="number" id="monto" name="monto" placeholder="$ Ingrese el monto">
+      </div>
+    
+      <!-- Selector de la cantidad de cuotas con un valor asignado por cada opción -->
+      <div>
+          <p>¿En cuantas cuotas desea pagarlo?</p>
+          <label for="N° cuotas">Elija el numero de cuotas</label> 
+            <select name="cuotas" id="cuotas">   
+              <option valor="1">1 </option>
+              <option valor="2">2 </option>
+              <option valor="3">2 </option>
+              <option valor="4">4 </option>
+              <option valor="5">5 </option>
+              <option valor="6">6 </option>
+              <option valor="7">7 </option>
+              <option valor="8">8 </option>
+              <option valor="9">9 </option>
+              <option valor="10">10 </option>
+              <option valor="11">11 </option>
+              <option valor="12">12 </option> 
+            </select>
+        </div>    
+        <!-- Boton para ejecutar evento submit y poblar  los datos en "App.js"-->
+        <div>
+          <button class="btn btn-primary" type="submit" id="boton">Enviar</button>
+        </div> 
+    </form>
+  
+    <!-- Muestra el resultado de la funcion "resultado" de App.js-->
+    <p id="resumen"></p>La cuota mensual es: de  <span class="resultado">$</span><span id="resultado" class="resultado"></span>
+  <br>
+ 
+<!-- Muestra datos para uso interno mediante que obtiene mediante fetch de la base de datos "data.json"-->
+  <h4 id="usointerno">Datos de uso interno</h4>
+  <div id="ejecutivo"></div>
+</body>
+<!-- Agrega app.js que calcula el valor cuota y fetch.js que muestra los datos de uso interno obtenidos de data.json -->
+  <script src="app.js"></script>
+  <script src="fetch.js"></script>
+</html>
